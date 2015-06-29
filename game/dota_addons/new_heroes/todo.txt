@@ -1,0 +1,15 @@
+Slime Trail:
+Should the Ooze disappear immedieately on teleport and reappear 1 second later?
+Should the teleport be channel or cast time (like prophet)?
+Should the teleport dodge projectiles?
+Should we remove the trail on death? This would disallow buyback into trail tp, but I like letting the slime run out normally more.
+Make a good particle.
+	we can have orientation control point to show effects along a line and use that to show the direction that the ooze moved
+	this way we can have a bit less particle spawns ingame
+	try project on characters for cool green effect in the particle
+
+particle filters that can be projected on ground:
+filters:
+	particles/
+	projected
+	proj

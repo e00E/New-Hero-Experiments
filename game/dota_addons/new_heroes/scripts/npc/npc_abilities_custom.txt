@@ -1,0 +1,369 @@
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	// Intcore
+	"intcore_improve_autoattack_lua"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"silencer_glaives_of_wisdom"
+		"ScriptFile"					"intcore_improve_autoattack_lua"
+		
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+
+		"AbilityCooldown"				"0"
+
+		"AbilityManaCost"				"20"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_as_pure_ratio"		"0.4 0.6 0.8 1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"projectile_speed"	"1800"
+			}
+		}
+		"Precache"
+		{
+			"particle" "particles/econ/events/ti4/blink_dagger_start_ti4.vpcf"
+		}
+	}
+	"intcore_give_health"
+	{
+		"BaseClass"				"ability_lua"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	"omniknight_purification"
+		"ScriptFile"			"intcore_give_health"
+
+		"AbilityCooldown"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"health_gain_per_hit"		"15 25 35 45"
+			}
+		}
+		"Precache"
+		{
+			"particle" "particles/generic_gameplay/generic_lifesteal.vpcf"
+		}
+	}
+	"intcore_shield"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"				"ability_lua"
+		"AbilityTextureName"	"abaddon_aphotic_shield"
+		"ScriptFile"			"intcore_shield"
+
+		"AbilityCooldown"				"48 42 36 30"
+		"AbilityManaCost"				"180"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"shield_duration" "1.6 1.8 2.0 2.2"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"absorbed_as_bonus_damage_ratio" "0.3 0.4 0.5 0.6"
+			}
+			"03"
+			{
+				"var_type" "FIELD_FLOAT"
+				"bonus_damage_duration" "6"
+			}
+		}
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf" // The shield on the caster
+			"particle" "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf" // bonus damage effect
+			"particle" "particles/status_fx/status_effect_gods_strength.vpcf" // bonus damage status effect
+			"particle" "particles/econ/items/abaddon/abaddon_feathers_mace/abaddon_aphotic_shield_explosion_ref.vpcf" // When shield expires
+		}
+	}
+	"intcore_roar"
+	{
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO" //TODOD how to add this for agha? | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"			"intcore_roar"
+		"AbilityTextureName"			"beastmaster_primal_roar"
+
+		"AbilityCastPoint"				"0.7"
+		"AbilityCastRange"				"900"
+		"AbilityCooldown"				"130 110 90"
+		"AbilityManaCost"				"200 250 300"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"		"10"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_movespeed_absolute" "30 40 50"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_attackspeed" "30 40 50"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"incoming_damage_reduction_percentage" "-25"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"aura_radius" "900"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"cooldown_scepter" "40 30 20"
+			}
+		}
+		"Precache"
+		{
+			"particle" "particles/units/heroes/hero_sven/sven_warcry_buff.vpcf" // Caster effect
+			"particle" "particles/items2_fx/tranquil_boots_healing_core.vpcf" // Ally effect
+			"particle" "particles/generic_gameplay/generic_lifesteal.vpcf" // From intcore_give_health
+		}
+	}
+	
+	//Accursed Ooze
+	"ooze_slime_trail"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"venomancer_poison_sting"
+		"ScriptFile"					"ooze_slime_trail"
+		
+		"AbilityCastRange"				"1800" 
+		"AbilityCastPoint"				"1"
+		"AbilityCooldown"				"9 7 5 3"
+		"AbilityManaCost"				"40"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"trail_duration"	"6 7 8 9"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"trail_radius"	"120"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slime_trail_enemy_movespeed"	"200"
+			}
+		}
+		"Precache"
+		{
+			"particle" "particles/ooze_slime_trail.vpcf" //slime trail
+			"particle" "particles/ooze_slime_trail_through_fog.vpcf" //same as above but cull radius = -1
+			"particle" "particles/units/heroes/hero_viper/viper_poison_debuff.vpcf" //effect that enemies get when affected by it
+			"particle" "particles/units/heroes/hero_earth_spirit/espirit_magnet_arclightning.vpcf" //effect that enemeis get when spell movement is canceled
+		}
+	}
+	"ooze_drench"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ooze_drench"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"venomancer_venomous_gale"
+
+		//TODO: or should this just appear in front of the hero without point target?
+		"AbilityCastRange"				"500 600 700 800" 
+		"AbilityCooldown"				"22"
+		"AbilityManaCost"				"110 120 130 140"
+		"AbilityDamage" 				"100 160 220 280"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"trail_duration"	"6 7 8 9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slime_duration"	"3 4 5 6"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"projectile_speed"	"800"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"projectile_width"	"120"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_distance"	"500 600 700 800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slime_trail_enemy_movespeed"	"200"
+			}
+		}
+		"Precache"
+		{
+			// "particle" "particles/ooze_slime_trail.vpcf" //slime trail
+			// "particle" "particles/ooze_slime_trail_through_fog.vpcf" //same as above but cull radius = -1
+			"particle" "particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf" //Projectile
+			"model" "models/development/invisiblebox.vmdl" // for HideWearables
+			"particle" "particles/econ/events/nexon_hero_compendium_2014/blink_dagger_steam_nexon_hero_cp_2014.vpcf" // Created on the Ooze and target on hit and when target gets turned back
+		}
+	}
+	"ooze_split"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ooze_split"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"venomancer_plague_ward"
+
+		"AbilityCooldown"				"8 6 4 2"
+		"AbilityManaCost"				"0"
+		"AbilityCastPoint"				"0.3" //should be?
+		
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"copy_duration"		"6 10 14 18"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_health_cost_ratio"		"0.2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stat_ratio"		"0.2"
+			}
+		}
+		"Precache"
+		{
+			"particle"	"particles/units/heroes/hero_venomancer/venomancer_ward_spawn.vpcf" // effect on the new copy when created
+		}
+	}
+	"ooze_digestive_acid"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ooze_digestive_acid"
+		
+		"AbilityType" 					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"venomancer_poison_nova"
+
+		"AbilityCooldown"				"120 110 100"
+		"AbilityManaCost"				"150 200 250"
+		"AbilityCastPoint"				"0.3" //should be?
+		"AbilityCastRange" "500"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"6 8 10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"initial_aoe"			"250"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe_increase_nonhero"		"25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe_increase_hero"		"125"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dps_max_hp_initial_ratio"		"0.06"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dps_max_hp_per_nonhero"		"0.005"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dps_max_hp_per_hero"		"0.025"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_bonus_per_unit"		"5"
+			}
+		}
+		"Precache"
+		{
+			"particle" "particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf" //On initial cast in middle of aoe
+			"particle" "particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green_smoke03.vpcf" //On each damage tick in middle of aoe
+		}
+	}
+	"test_ability"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"test_ability"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"silencer_glaives_of_wisdom"
+
+		"AbilityCastRange"				"0" 
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+	}
+}

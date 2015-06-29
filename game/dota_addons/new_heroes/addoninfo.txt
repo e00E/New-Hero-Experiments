@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+	//This team is needed for Accursed Ooze's Drench spell. See ooze_drench_change_team_modifier.lua for more info.
+	"TeamCount" "3"
+	"ooze_drench_dummy_team1"
+	{
+		"MaxPlayers" "0"
+	}
+}
