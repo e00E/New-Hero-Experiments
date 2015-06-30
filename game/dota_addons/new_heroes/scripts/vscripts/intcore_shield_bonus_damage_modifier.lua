@@ -15,20 +15,9 @@ function intcore_shield_bonus_damage_modifier:OnCreated(keys)
 	end
 end
 
--- On refresh use the new values. Otherwise we would keep the old bonus damage and ratio.
--- Really just an edge case with Refresher.
 function intcore_shield_bonus_damage_modifier:OnRefresh(keys)
 	if IsServer() then
-		self.absorbed_as_bonus_damage_ratio = keys.absorbed_as_bonus_damage_ratio
-		self.bonus_damage = keys.bonus_damage
-		if self.absorbed_as_bonus_damage_ratio == nil then
-			print("intcore_shield_bonus_damage_modifier created without specifying the bonus_damage key")
-			self.absorbed_as_bonus_damage_ratio = 1
-		end
-		if self.bonus_damage == nil then
-			print("intcore_shield_bonus_damage_modifier created without specifying the bonus_damage key")
-			self.bonus_damage = 0
-		end
+		self:OnCreated(keys)
 	end
 end
 

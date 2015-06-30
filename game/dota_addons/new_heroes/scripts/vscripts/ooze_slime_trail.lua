@@ -11,7 +11,7 @@ function ooze_slime_trail:OnAbilityPhaseStart()
 	if self:CastFilterResultLocation(self:GetCursorPosition()) == UF_SUCCESS then
 		return true
 	else
-		-- TODO: show red cast error message. Which method does that?
+		-- TODO: show red cast error message. How?
 		return false
 	end
 end
@@ -27,8 +27,8 @@ end
 
 function ooze_slime_trail:CastFilterResultLocation( vLocation )
 	-- We search for a thinker unit having the correct modifier and caster
-	-- the caster is important if there are multiple oozes in the game or if rubick steals it
-	-- TODO: What should happen if the ooze runs out while the ability channels? Continue or cancel?
+	-- the caster is important if there are multiple oozes in the game or if Rubick steals it
+	-- TODO: What should happen if the ooze runs out while the ability channels? Continue or cancel?. Currently continue.
 	
 	-- This check can only be performed server side. We always return true client side or the server side check will not run.
 	if IsServer() then

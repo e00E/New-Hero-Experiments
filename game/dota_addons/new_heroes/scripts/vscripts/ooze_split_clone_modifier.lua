@@ -35,7 +35,7 @@ function ooze_split_clone_modifier:OnTakeDamage(keys)
 end
 
 function ooze_split_clone_modifier:OnAttackLanded(keys)
-	-- Remove the unit if it dies so it does not count as a kill and no gold, bounty, respawn happens.
+	-- Absorb behaviour
 	caster = self:GetCaster()
 	parent = self:GetParent()
 	if keys.target == parent and keys.attacker == caster then
@@ -45,7 +45,7 @@ function ooze_split_clone_modifier:OnAttackLanded(keys)
 end
 
 function ooze_split_clone_modifier:OnAttackStart(keys)
-	-- Remove the unit if it dies so it does not count as a kill and no gold, bounty, respawn happens.
+	-- Dont allow other team members to attack it
 	caster = self:GetCaster()
 	parent = self:GetParent()
 	if keys.target == parent and keys.attacker:GetTeam() == parent:GetTeam() and keys.attacker ~= caster then

@@ -49,6 +49,7 @@ function ooze_digestive_acid_thinker_modifier:OnDeath(keys)
 	end
 	local parent = self:GetParent()
 	local caster = self:GetCaster()
+	local recalc_stats = false
 	if vec_distance(keys.unit:GetOrigin(), parent:GetOrigin()) <= self:get_aoe() then
 		if keys.unit:IsConsideredHero() then
 			self.num_hero_died = self.num_hero_died + 1
@@ -57,9 +58,10 @@ function ooze_digestive_acid_thinker_modifier:OnDeath(keys)
 		end
 		if keys.unit:GetTeam() ~= parent:GetTeam() then
 			caster:FindModifierByName("ooze_digestive_acid_hp_bonus_modifier"):IncrementStackCount()
+			recalc_stats = true
 		end
 	end
-	caster:CalculateStatBonus()
+	if recalc_stats then caster:CalculateStatBonus() end
 end
 
 function ooze_digestive_acid_thinker_modifier:OnIntervalThink()

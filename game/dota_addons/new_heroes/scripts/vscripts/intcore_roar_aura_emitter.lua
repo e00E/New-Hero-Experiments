@@ -37,7 +37,6 @@ end
 
 function intcore_roar_aura_emitter:OnRefresh(keys)
 	if IsServer() then
-		-- Update all values incase ability is recast while active
 		self:OnCreated(keys)
 	end
 end

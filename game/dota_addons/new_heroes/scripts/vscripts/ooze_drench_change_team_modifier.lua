@@ -20,7 +20,7 @@ Changing the model does not really work. The new model does not look right and i
 HideWearables crashes the game randomly even with the convar set. Commented out for that.
 
 TODO:
-test the dummy unit move withs real hero, has higher targeting priority and damages real hero too approach.
+test the dummy unit move with real hero, has higher targeting priority and damages real hero too approach.
 ]]
 
 

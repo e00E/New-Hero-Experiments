@@ -30,13 +30,13 @@ function intcore_roar_aura_modifier:OnCreated(keys)
 			print("intcore_roar_aura_modifier created without specifying the health_gain_per_hit key")
 			self.health_gain_per_hit = 0
 		end
-		modifier_table = {
-			duration = -1,
-			health_gain_per_hit = self.health_gain_per_hit
-		}
 		self.remove_give_health = false
 		if not self:GetParent():HasModifier("intcore_give_health_modifier") then
 			self.remove_give_health = true
+			modifier_table = {
+				duration = -1,
+				health_gain_per_hit = self.health_gain_per_hit
+			}
 			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "intcore_give_health_modifier", modifier_table)
 		end
 	end

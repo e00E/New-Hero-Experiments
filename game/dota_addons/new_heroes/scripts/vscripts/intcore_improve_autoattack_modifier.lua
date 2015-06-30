@@ -7,27 +7,18 @@ function intcore_improve_autoattack_modifier:OnCreated(keys)
 		self.mana_cost = keys.mana_cost
 		if self.damage_as_pure_ratio == nil then
 			print("intcore_autoattack_modifier created without specifying the base_damage_as_pure_ratio key")
-			self.damage_as_pure_ratio = 1
+			self.damage_as_pure_ratio = 0
 		end
 		if self.mana_cost == nil then
 			print("intcore_autoattack_modifier created without specifying the base_damage_as_pure_ratio key")
-			self.mana_cost = 20
+			self.mana_cost = 0
 		end
 	end
 end
 
 function intcore_improve_autoattack_modifier:OnRefresh(keys)
 	if IsServer() then
-		self.damage_as_pure_ratio = keys.damage_as_pure_ratio
-		self.mana_cost = keys.mana_cost
-		if self.damage_as_pure_ratio == nil then
-			print("intcore_autoattack_modifier created without specifying the base_damage_as_pure_ratio key")
-			self.damage_as_pure_ratio = 1
-		end
-		if self.mana_cost == nil then
-			print("intcore_autoattack_modifier created without specifying the base_damage_as_pure_ratio key")
-			self.mana_cost = 20
-		end
+		self:OnCreated(keys)
 	end
 end
 
@@ -60,7 +51,7 @@ function intcore_improve_autoattack_modifier:OnAttackLanded(keys)
 		local original_damage = keys.original_damage
 		local armor = target:GetPhysicalArmorValue()
 		local armor_multiplier = 1 - (0.06 * armor) / (1 + 0.06 * math.abs(armor))
-		-- TODO change once bug is fixed
+		-- TODO change once bug is fixed. The bug being that keys.damage is the damage before reductions and keys.original_damage is always 0
 		local original_damage = damage
 		local modified_damage = original_damage * armor_multiplier
 		local base_damage = attacker:GetAttackDamage()

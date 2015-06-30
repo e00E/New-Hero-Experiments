@@ -1,12 +1,10 @@
 ooze_slime_trail_emitter_modifier = class({})
 
--- This modifier uses the slime_trail_emitter_override_owner on its parent to determine who the slime trail belongs to
--- because it can affect a unit but belong to a different unit.
+-- This modifier uses the slime_trail_emitter_override_owner attribute on itsself to determine who the slime trail belongs to
+-- because it can affect a unit but belong to a different unit. Other methods applying this modifier can then FindModifierByName and set the attribute.
 -- The owner is the unit that can teleport to the trail and whose team is not affected by the slow.
 -- If not set the owner is the parent of the modifier.
 -- If set the owner is the unit this is set to.
-
--- This modifier will be bugged with multiple oozes or rubick in the game.
 
 function ooze_slime_trail_emitter_modifier:get_parent_position()
 	return self:GetParent():GetOrigin()
@@ -34,11 +32,8 @@ function ooze_slime_trail_emitter_modifier:OnCreated(keys)
 		else
 			self.trail_radius = keys.trail_radius
 		end
-		self.counter = 0
 		self:OnIntervalThink()
-		self:StartIntervalThink(0.03)
-		-- TODO: find a good way to find the the value to think on every frame?, or should we do it less often for performance?
-		-- maybe spawn all the dummy units but dont spawn the trail effect on each
+		self:StartIntervalThink(0.3)
 	end
 end
 
@@ -56,9 +51,7 @@ function ooze_slime_trail_emitter_modifier:OnIntervalThink()
 			modifier_table = {
 				duration = self.trail_duration,
 				trail_radius = self.trail_radius,
-				create_particles = self.counter % 10 --only create particles every 10th dummy unit
 			}
-			self.counter = self.counter + 1
 			-- TODO: try leaving the trail BEHIND the unit and not right on it, so you couldnt slow units in front of you
 			-- Could be where the unit was x frames ago, in which case there would be a slime form delay, might be fine.
 			-- Could be physically behind in which you might be able to abuse it by spinning fast.
@@ -67,7 +60,7 @@ function ooze_slime_trail_emitter_modifier:OnIntervalThink()
 			else
 				CreateModifierThinker( self.slime_trail_emitter_override_owner, self:GetAbility(), "ooze_slime_trail_thinker_modifier", modifier_table, self:get_parent_position(), self.slime_trail_emitter_override_owner:GetTeamNumber(), false )
 			end
-			-- if ((self.counter % 10) == 0) then DebugDrawCircle(self:get_caster_position(), Vector(0, 255, 0), 0, self.trail_radius, false, self.trail_duration) end
+			-- DebugDrawCircle(self:get_parent_position(), Vector(0, 255, 0), 0, self.trail_radius, false, self.trail_duration)
 		end
 	end
 end

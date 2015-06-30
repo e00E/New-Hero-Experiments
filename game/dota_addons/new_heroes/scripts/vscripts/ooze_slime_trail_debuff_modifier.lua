@@ -8,8 +8,9 @@ function ooze_slime_trail_debuff_modifier:OnCreated(keys)
 	if keys.isProvidedByAura then
 		-- TODO: When using Split the clone whose slime trail triggered this debuff can already be dead
 		-- in this case GetAbility will return nil.
-		if self:GetAbility() ~= nil then
-			self.move_speed_fixed = self:GetAbility():GetSpecialValueFor("slime_trail_enemy_movespeed")
+		local ability = self:GetAbility()
+		if ability ~= nil then
+			self.move_speed_fixed = ability:GetSpecialValueFor("slime_trail_enemy_movespeed")
 		else
 			self.move_speed_fixed = 200
 		end
@@ -34,15 +35,14 @@ function ooze_slime_trail_debuff_modifier:GetModifierMoveSpeed_Absolute()
 end
 
 function ooze_slime_trail_debuff_modifier:OnIntervalThink()
-	local function vec_distance(vec1,vec2)
-		return math.sqrt(math.pow(vec2.x-vec1.x,2)+math.pow(vec2.y-vec1.y,2))
-	end
 	if IsServer() then
+		local function vec_distance(vec1,vec2)
+			return math.sqrt(math.pow(vec2.x-vec1.x,2)+math.pow(vec2.y-vec1.y,2))
+		end
 		local parent = self:GetParent()
 		local new_position = parent:GetOrigin()
-		-- times 2 here so we have some headroom. Without it normal moving gets detected as too fast
+		-- Times 2 here so we have some headroom. Without it normal movevement gets detected as too fast
 		if vec_distance(new_position, self.old_position) > self.move_speed_fixed * 0.03 * 2 then
-			-- TODO could have special particle here
 			local particle_index = ParticleManager:CreateParticle("particles/units/heroes/hero_earth_spirit/espirit_magnet_arclightning.vpcf", PATTACH_ABSORIGIN, parent)
 			ParticleManager:SetParticleControl(particle_index, 1, self.old_position)
 			ParticleManager:ReleaseParticleIndex(particle_index)

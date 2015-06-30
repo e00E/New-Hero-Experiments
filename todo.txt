@@ -1,3 +1,12 @@
+Split:
+the clone can sell move items :|
+do implement clones with custom unit and not cloning a hero
+
+I think drench is crashing bots
+do try to reimplement drench with the dummy unit approach
+
+Add overhead timer message for split duration.
+
 Slime Trail:
 Should the Ooze disappear immedieately on teleport and reappear 1 second later?
 Should the teleport be channel or cast time (like prophet)?

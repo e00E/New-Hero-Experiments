@@ -65,13 +65,25 @@ function ooze_split:OnSpellStart()
 	ParticleManager:ReleaseParticleIndex(particle_index)
 end
 
-function ooze_split:OnAbilityPhaseStart()
-	-- Only allowing casting if the caster would not die from the health loss
+function ooze_split:has_enough_health_to_cast()
 	local caster = self:GetCaster()
 	local health_ratio = self:GetSpecialValueFor("max_health_cost_ratio")
-	if caster:GetHealth() > caster:GetMaxHealth() * health_ratio then
-		return true
+	return caster:GetHealth() > caster:GetMaxHealth() * health_ratio
+end
+function ooze_split:OnAbilityPhaseStart()
+	-- TODO show red error message
+	return self:has_enough_health_to_cast()
+end
+
+function ooze_split:CastFilterResult()
+	if IsServer() then
+		if self:has_enough_health_to_cast() then return UF_SUCCESS else return UF_FAIL_CUSTOM end
 	else
-		return false
+		return UF_SUCCESS
 	end
+end
+
+function ooze_split:GetCustomCastError()
+	-- There can only be one cast error so we dont have to do anything else
+	return "#dota_hud_error_not_enough_health_to_cast"
 end
