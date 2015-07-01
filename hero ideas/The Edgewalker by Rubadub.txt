@@ -1,0 +1,31 @@
+The Edgewalker
+
+Hero Type: INT
+Range: 550
+
+
+Death Watch: (Active, targeted allied unit) The targeted unit gains a buff, and if the unit is killed while the buff lasts, the enemy that killed it takes damage and is stunned. Buff lasts 10 seconds.
+Level 1: 100 damage, 1 second stun.
+Level 2: 200 damage, 1.5 second stun.
+Level 3: 300 damage, 2 second stun.
+Level 4: 400 damage, 2.5 second stun.
+
+
+Reality Shift: (Active, targeted point) Summons a totem at the targeted point that turns all enemies in XAoE around it ethereal as long as they are in its AoE. Totem lasts 10 seconds or until killed, and is not magic immune.
+Level 1: 100 life, 2 armor, 400AoE.
+Level 2: 175 life, 3 armor, 500AoE.
+Level 3: 250 life, 4 armor, 600AoE.
+Level 4: 325 life, 5 armor, 700AoE.
+
+
+Fatal Attraction: (Passive) Whenever you cast a spell, black tendrils pull every enemy in a 600AoE of you close to you (Does not interrupt actions) and damaging them.
+Level 1: 80 pull distance, 30 damage.
+Level 2: 110 pull distance, 60 damage.
+Level 3: 140 pull distance, 90 damage.
+Level 4: 170 pull distance, 120 damage.
+
+
+Haunting Echoes: (Active, targeted point) You passively summon a spirit that floats around you every 6 seconds, with a max of three spirits floating around you. Every allied unit that dies around you has a % chance of summoning another spirit. When cast, one of your spirits will fly to the targeted area and explode, dealing damage in a 300AoE and silencing for 1.5 seconds. 1 second CD.
+Level 1: 100 damage, 15% chance to summon a spirit.
+Level 2: 150 damage, 20% chance to summon a spirit.
+Level 3: 200 damage, 25% chance to summon a spirit. 

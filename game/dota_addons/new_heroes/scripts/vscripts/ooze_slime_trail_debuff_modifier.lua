@@ -25,7 +25,7 @@ end
 
 function ooze_slime_trail_debuff_modifier:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, -- TODO should maybe MODIFIER_PROPERTY_MOVESPEED_MAX or some units might get faster from the slime
 	}
 	return funcs
 end

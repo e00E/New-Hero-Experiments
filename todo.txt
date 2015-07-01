@@ -1,24 +1,35 @@
-Split:
-the clone can sell move items :|
-do implement clones with custom unit and not cloning a hero
+General:
+	Make each modifier / effect it's own modifier if possible so it is more modular.
 
-I think drench is crashing bots
-do try to reimplement drench with the dummy unit approach
+Ooze:
+	Slime trail:
+		Split passive and active component so it more modular?!
+		startgesture, setanimation
 
-Add overhead timer message for split duration.
+	Split:
+	do implement clones with custom unit and not cloning a hero
+	clones take xp and can lvl up
+	
 
-Slime Trail:
-Should the Ooze disappear immedieately on teleport and reappear 1 second later?
-Should the teleport be channel or cast time (like prophet)?
-Should the teleport dodge projectiles?
-Should we remove the trail on death? This would disallow buyback into trail tp, but I like letting the slime run out normally more.
-Make a good particle.
-	we can have orientation control point to show effects along a line and use that to show the direction that the ooze moved
-	this way we can have a bit less particle spawns ingame
-	try project on characters for cool green effect in the particle
+	Drench crashes bot games when they change back to the original team
+	do try to reimplement drench with the dummy unit approach
+	
+	use on order event to stop drenched unit from targeting spells at their team
 
-particle filters that can be projected on ground:
-filters:
-	particles/
-	projected
-	proj
+	Slime Trail:
+	Give teleport an animation (see luaabilityexample natures prophet teleport)
+	Should the Ooze disappear immedieately on teleport and reappear 1 second later?
+	Should the teleport be channel or cast time (like prophet)?
+	Should the teleport dodge projectiles?
+	Should we remove the trail on death? This would disallow buyback into trail tp, but I like letting the slime run out normally more.
+	Make a good particle.
+		we can have orientation control point to show effects along a line and use that to show the direction that the ooze moved
+		this way we can have a bit less particle spawns ingame
+		try project on characters for cool green effect in the particle
+	cane you make control point to color and to radius? YES there is Element.C_INIT_RadiusFromCPObject in initializers
+
+	particle filters that can be projected on ground:
+	filters:
+		particles/
+		projected
+		proj

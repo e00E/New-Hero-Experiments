@@ -1,0 +1,84 @@
+##### ########### #####
+##### Sir Forlorn #####
+##### ########### #####
+
+### Base Stats ###
+
+Str 26 (+2,4) [MAIN]
+Agi 18 (+1,4)
+Int 17 (+1,9)
+
+Damage 28-36 (base)
+Armor 2 (base)
+BAT: 1,6
+Movement Speed: 295
+Turnrate: 0,4
+Sight Range: 1800/800
+Attack Range: 128 (meele)
+Projectile Velocity: instant
+Attack Duration 0,3/0,5
+All spells have a cast time of 0,75 seconds, except Support the Vanguard which has 0,3.
+
+
+
+### Abilities: ###
+
+# Support the Vanguard #
+Forlorn rushes forward, pushing all units out of his path. Slows enemies around target location.
+Mana: 120/130/140/150
+cD: 14
+Distance: 500/550/600/650
+Slow (%): 25/30/35/40
+Push distance: 120 units [note: 90° sideways, does not cancel channeling]
+
+
+# Battleshout #
+Skilling this ability provides two sub-abilties, Offensive Banner and Defensive Banner.
+Removes all active banners from the map. Grants the buffs of both the Offensive Banner's and Defensive Banner's current level to all Units within 500 radius around Forlon.
+Mana: 100
+CD: 80
+Duration: 6 seconds
+
+man kann nur 1 banner gleichzeitig haben
+offensive / defensive soll auch alle banner auf der map removen
+
+
+# Offensive Banner #
+Places a banner in front of Forlon. Provides all units within the banner's proximity with offensive buffs.
+Mana: 120
+CD: 80
+Radius: 600
+Banner Duration: 25 seconds
+Base Attack Damage(%): 11/14/17/20
+Attack Speed increase: 10/20/30/40
+Chance to gain 100% lifesteal upon attack: 15%
+
+
+# Defensive Banner #
+Places a banner in front of Forlon. Provides all units within the banner's proximity with defensive buffs.
+Mana: 120
+CD: 80
+Radius: 600
+Banner Duration: 25 seconds
+Armor increase: 3/5/7/9
+Magic resistance (%): 10/15/20/25
+Chance to block an incoming attack: 15% [note: works like backtrack]
+
+
+# Strength in Numbers #
+Forlorn gains additional armor and magic resistance when he's surrounded by friendly units.
+Heroes provide three stacks, all other units one.
+Armor per stack: 1
+Magic resistance per stack: 3%
+Max Stacks: 8/12/16/20
+Radius: 500 [note: centered around Forlon, updated every second]
+
+
+# Call to Duty [ulti] #
+Enemy units within target AoE get converted by Forlon. If the amount of units within the AoE exceeds the maximum the units closest to the center will be selected. They die after once the duration runs out.
+Mana: 250/350/450
+CD: 120/110/100
+Duration: 20/35/50 seconds
+Max units: 25
+AoE: 700
+Cast Range: 1050

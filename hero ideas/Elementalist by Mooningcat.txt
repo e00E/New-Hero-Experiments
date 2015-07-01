@@ -1,0 +1,66 @@
+##### ### #####
+##### Ele #####
+##### ### #####
+
+### Base Stats ###
+
+Str 21 (+2)
+Agi 21 (+2)
+Int 21 (+2) [MAIN]
+
+Damage 21-29 (base)
+Armor 0 (base)
+BAT: 1,4
+Movement Speed: 300
+Turnrate: 0.4
+Sight Range: 1800/800
+Attack Range: 500
+Projectile Velocity: 1100
+Attack Duration 0,4/0,2
+
+
+
+### Abilities: ###
+
+# Spell #
+This ability can not be skilled, it is avaiable from level 0. It's effect is based on the current attuned element. CD does reset when switching to another elemental or activating ultimate.
+Mana: 130
+
+Fire
+CD: 22
+Deals heavy magical damage to a single target.
+Damage: 120/210/300/390
+
+Water
+CD: 12
+Heals target unit
+Heal: 140/200/260/320
+
+Earth
+CD: 14
+Stuns an enemy
+Duration: 1.5/2.25/3/3.75
+
+# Fire #
+Grants additional int while attuned, each auto attack deals damage over time. Refreshes duration upon successive casts.
+
+Int: 4/8/12/16
+Duration: 4
+Dps (total of 4): 12/18/24/30
+
+# Water #
+Grants additional agi and passive lifesteal when attuned.
+Agi: 4/8/12/16
+Lifesteal (%): 10/15/20/25
+
+# Earth #
+Grands additional str while attuned, each auto attack placed a buff that slows the enemy. Refreshes duration upon successive casts.
+Str: 4/8/12/16
+Slow (%): 18/24/30/36
+
+
+# Tranform [ulti] #
+Gives all three forms (current level) providing all six bonus during its duration. #Spell has all three effects aswell, heals self.
+CD: 180/140/120
+Mana: 150/200/250
+Duration: 16

@@ -1,0 +1,59 @@
+Accursed Ooze
+
+Dire
+
+STR – 26 +3.5
+AGI – 15 +1.5
+INT – 13 +1
+
+
+280 MS
+1 Armor
+56-66 Damage
+
+
+
+Slime Trail
+==========
+You passively leave a trail of adhesive slime behind you as you move. You can active the skill to melt into the trail and reform yourself at any slimed spot over 1 second. Enemies touching the trail have their MS set to 200, and can't be moved by items or abilities.
+
+Manacost: 40
+Cooldown: 9/7/5/3
+Cast Range: 1800
+Trail Width: 120
+Trail Segment Duration: 6/7/8/9
+Reform Time: 1 second
+
+
+Drench
+======
+You spew a glob of ooze in a line that deals damage to enemies it hits. Struck enemy heroes become covered in slime, making them indistinguishable from you and allowing them to be damaged by their allies. They also leave slime trails as they move.
+
+Manacost: 110/120/130/140
+Cooldown: 22
+Travel Range: 500/600/700/800
+Glob Width: 120
+Damage: 100/160/220/280
+Slime Duration: 3/4/5/6 seconds
+Glob Speed: 800
+
+
+Split
+=====
+You split off a copy of yourself at the cost of health. The copy has 20% of your stats, but can't use your active abilities/items. You can attack a copy to destroy and reabsorb them, healing you for the health cost.
+
+Health Cost: 20% of max health (Can't be used if under 20% max health)
+Cooldown: 8/6/4/2 seconds
+Split Duration: 6/10/14/18 seconds
+
+
+Digestive Acid
+============
+You spit up a pool of digestive acid at the target AoE that deals DPS to enemies based off your max health. Whenever a unit dies inside the acid, it's DPS and AoE grow. If that unit was an enemy, you gain a permanent 5 health.
+
+Manacost: 150/200/250
+Cooldown: 120/110/100
+Cast Range: 500
+Duration: 6/8/10 seconds
+AoE: 250 +25 per non-hero death/+125 per hero
+DPS: 6% max health +0.5 per non-hero death/+2.5% per hero 

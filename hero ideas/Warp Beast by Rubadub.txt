@@ -1,0 +1,12 @@
+Warp Beast
+Fel Beast – AGI
+350 Range
+
+
+Flicker: (Orb, Auto-cast) Your attacks cause you to briefly phase out of existence for 0.3 seconds and reappear 250 distance behind the targeted enemy. 35/30/25/20 mana, 0 CD.
+
+Distortion Sphere: Creates an AoE of distortion at the target AoE. Allies inside the distortion can't be targeted or damaged by enemies outside the distortion. Lasts 3/4/5/6 seconds, 350AoE, 100 mana, 20 second CD.
+
+Entropy Ward: (Active, targeted point) Creates a ward at the targeted spot that links all enemies in a 600AoE around it to it. While the ward lasts, all linked enemies loose 1% of their max life a second for every 100 distance they are away from the ward. The ward lasts up to 6 seconds, and takes 3 hero attacks to kill. 120 mana, 25 second CD, 600 cast range.
+
+Phase Bomb: You summon a bomb at the target point that can be attacked by anyone, and explodes after 4 attacks dealing 400/650/800 damage and stunning enemies for 2/2.75/3.5 seconds. 450 AoE, 400 cast range, 200 mana, 45 second CD. 

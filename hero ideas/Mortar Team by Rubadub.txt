@@ -1,0 +1,57 @@
+Mortar Team
+
+700 Range
+AGI
+Sent
+
+High Explosive
+============
+(Auto-castable) Causes your physical attacks to deal splash damage and target the ground instead of units. If you are caught in your own attack's splash AoE, you take 50% of that damage and are knocked away from the blast.
+
+Manacost: 25
+Cooldown: 6/4/2/0
+Splash AoE: 100 (200% Damage) 175 (150% Damage) 250 (100% Damage)
+Knock Back Distance: 250 +3* Self Damage
+Knock Back Duration: 0.3 seconds
+
+
+Marker / Bombard
+==============
+You place an invisible marker with 5 life at the target point, with a cap of x markers active at one time. Comes with the sub-ability 'Bombard' which causes you to launch an artillery shell at each marker, dealing damage and burns enemies.
+
+Manacost: 25 (Marker) 100 (Bombard)
+Cooldown: 20/16/12/8 (Marker) 15 (Bombard)
+Cast Range: 200/300/400/500
+Max Markers: 2/3/4/5
+Explosion AoE: 350
+Damage Per Shell: 100/150/200/250
+Burn Damage: 1.5* AGI over 5 seconds
+Projectile Speed: 1200
+
+
+Tangle Wire
+==========
+Creates a line of wire that ensnares and damages enemies that try to cross it. Enemies remain ensnared until the wire is destroyed.
+
+Manacost: 100
+Coodown: 15
+Cast Range: 200
+Wall Length: 350
+Wall Width: 50
+Duration: 15/30/45/60
+Attacks to Kill: 1/2/2/3 (3/6/6/9 non-hero attacks)
+DPS: 30/45/60/75
+
+
+Flash Bang
+=========
+You fire an artillery shell full of flash powder at the target spot, silencing enemies in the blast AoE and blinding enemies in sight range that are facing the explosion.
+
+Manacost: 150/175/200
+Cooldown: 30
+Cast Range: 1100/1400/1700
+Silence AoE: 400
+Blind/Silence Duration: 5/6.5/8 seconds
+Blind Miss-chance: 75%
+Blind Sight-reduction: 75%
+Projectile Speed: 900 

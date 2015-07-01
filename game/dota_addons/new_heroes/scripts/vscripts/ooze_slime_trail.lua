@@ -21,6 +21,8 @@ function ooze_slime_trail:OnSpellStart()
 	FindClearSpaceForUnit( self:GetCaster(), self:GetCursorPosition(), true )
 end
 
+-- Sadly this does not totally work seemingly because slime trail is MODIFIER_ATTRIBUTE_MULTIPLE .
+-- on level up this wont refresh the buff with new values
 function ooze_slime_trail:GetIntrinsicModifierName()
 	return "ooze_slime_trail_emitter_modifier"
 end

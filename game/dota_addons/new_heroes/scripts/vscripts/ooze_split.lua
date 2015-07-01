@@ -2,7 +2,7 @@ ooze_split = class({})
 LinkLuaModifier( "ooze_split_clone_modifier", LUA_MODIFIER_MOTION_NONE )
 
 -- most of it from http://moddota.com/forums/discussion/62/illusion-ability-example by Noya
-function make_copy(target, ability, stat_ratio, duration)
+function make_copy(target)
 	copy = CreateUnitByName(target:GetUnitName(), target:GetOrigin(), true, target, nil, target:GetTeam())
 	copy:SetPlayerID(target:GetPlayerID())
 	copy:SetControllableByPlayer(target:GetPlayerID(), true)
@@ -34,15 +34,6 @@ function make_copy(target, ability, stat_ratio, duration)
 			copy:AddItem(newItem)
 		end
 	end
-
-	local str = target:GetStrength()
-	copy:ModifyStrength(-str * (1 - stat_ratio)) 
-	local int = target:GetBaseIntellect()
-	copy:ModifyIntellect(-int * (1 - stat_ratio)) 
-	local agi = target:GetBaseAgility()
-	copy:ModifyAgility(-agi * (1 - stat_ratio)) 
-
-	copy:AddNewModifier(caster, ability, "modifier_kill", {duration = duration})
 	
 	return copy
 end
@@ -56,10 +47,13 @@ function ooze_split:OnSpellStart()
 		damage_type = DAMAGE_TYPE_PURE,
 	}
 	ApplyDamage(damageTable)
-	copy = make_copy(caster, self, self:GetSpecialValueFor("stat_ratio"), self:GetSpecialValueFor("copy_duration"))
+	local duration = self:GetSpecialValueFor("copy_duration")
+	local stat_ratio = self:GetSpecialValueFor("stat_ratio")
+	copy = make_copy(caster)
 	slime_trail = copy:FindModifierByName("ooze_slime_trail_emitter_modifier")
 	if slime_trail ~= nil then slime_trail.slime_trail_emitter_override_owner = self:GetCaster() end-- So the main hero can teleport to it
-	copy:AddNewModifier(caster, ability, "ooze_split_clone_modifier", {duration = -1, heal_amount = damageTable.damage})
+	copy:AddNewModifier(caster, self, "ooze_split_clone_modifier", {duration = -1, heal_amount = damageTable.damage, time_to_death = duration, stat_ratio = stat_ratio})
+	copy:AddNewModifier(caster, self, "modifier_kill", {duration = duration})
 	
 	local particle_index = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_spawn.vpcf", PATTACH_ABSORIGIN_FOLLOW, copy)
 	ParticleManager:ReleaseParticleIndex(particle_index)

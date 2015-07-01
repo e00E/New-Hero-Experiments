@@ -1,0 +1,53 @@
+Edin, the Royal Guard
+
+Sent
+Melee
+STR
+
+
+Shield Toss
+===========
+You chuck your shield at the target point in an arc motion (Like a boomerang) and it returns to you. Struck enemies take damage and are stunned.
+
+Manacost: 80/90/100/110
+Cooldown: 12/11/10/9
+Cast Range: 900
+Shield AoE: 75
+Damage: 80/160/240/320
+Stun Duration: 1/1.4/1.8/2.2 seconds
+Projectile Speed: 1200
+Damage Type: Physical
+
+
+Guard
+=========
+(Toggle) You throw up your shield and brace for impact. Blocks most damage dealt to your front, but slows your MS to 100. The blocked damage is added to your next Shield Toss (15 second damage window)
+
+Manacost: 30/25/20/15
+Cooldown: 6/5/4/3
+Damage Block: 80%
+
+
+Steel Wall
+===========
+(Channeling) You become a one man shield wall. As long as you channel, any enemies that tries to move past you will be knocked back and damaged. You are immune to knockbacks while channeling.
+
+Manacost: 100
+Cooldown: 20/18/16/14
+Max Duration: 4/5/6/7
+AoE: 400/475/550/625 line centered on you
+Knockback Distance: 150
+Damage: 30/50/70/90
+Damage Type: Physical
+
+
+Defender
+========
+You rush to an allied unit, damaging enemies you impact based on your armor, and redirecting 75% of the damage that ally takes to yourself for 6 seconds.
+
+Manacost: 150
+Cooldown: 25/20/15
+Cast Range: 800/1200/1600
+Damage: 100/200/300 +4/6/8* your armor
+Rush Speed: 1100
+Damage Type: Physical 

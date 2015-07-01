@@ -1,0 +1,94 @@
+Eldritch Cleric
+
+STR - 19 +2.6
+AGI - 13 +1
+INT - 26 +3.2
+[?IMG]
+650 Range
+290 MS
+1 Armor
+1.7 BAS
+43-63 Damage
+Turn Rate: 1.0
+Projectile Speed: 900
+
+[?IMG]
+Eldritch Blast
+===========
+(Auto-castable) Causes your physical attacks to deal splash damage and target the ground instead of units. If you are caught in your own attack's splash AoE, you take 50% of that damage and are knocked away from the blast.
+
+Manacost: 25
+Cooldown: 6/4/2/0
+Splash AoE: 100 (200% Damage) 175 (150% Damage) 250 (100% Damage)
+Knock Back Distance: 250 +3* Self Damage
+Knock Back Duration: 0.3 seconds
+
+
+[?IMG]
+Writhing Wall
+==========
+Creates a wall of grasping tentacles that ensnare enemies that touch them, dealing them DPS. Each tentacle can only ensnare one enemy at a time, and holds them until it is killed or the enemy leaves it's AoE.
+
+Manacost: 90/100/110/120
+Cooldown: 12
+Cast Range: 350
+Tentacle AoE: 60
+Number of Tentacles: 4/5/6/7
+Duration: 30/40/50/60 seconds
+Attacks to Kill a Tentacle: 1/1/2/2 Hero (3/3/6/6 Non-hero)
+Tentacle DPS: 30/50/70/90
+Damage Type: Physical
+Tentacle Bounty: 8 gold, 4 EXP
+
+
+[?IMG]
+Glimpse of Insanity
+================
+You link your twisted mind with each hero in an AoE around you, causing them to run away from you and to take damage when you do. If a link breaks, that enemy regains control and you take damage.
+
+Manacost: 130/145/160/175
+Cooldown: 26
+AoE: 325
+Link Break Range: 650
+Break Damage: 10% of current health
+Link Duration: 1.25/2/2.75/3.5 seconds
+Damage Share: 75/100/125/150% (After Reductions)
+Damage Type: Pure
+
+
+[?IMG]
+Planar Tear
+==========
+Rips a vortex into the elder dimension that follows you or a target enemy hero around, spawning an Old One every 2 seconds. The vortex leaves a trail as it moves that you and allies can walk into to be swept up to it's entrance after a short delay. Old Ones attack the nearest enemy visible to them, and if none are in range, they seek out and attack you.
+
+Mana Cost: 250/400/550
+Cooldown: 140/130/120
+Cast Range: 600
+Vortex Duration: 10 seconds
+Vortex MS: 450/525/600 (Flying)
+Trail AoE: 100
+Trail Pull Delay: 2/1.75/1.5 seconds
+Trail Pull Speed: 500/800/1100
+
+
+Old One:
+
+[?IMG]
+HP: 400/500/600
+MS: 375/400/425
+1.3 BAS
+3/4/5 Armor
+15/20/25% Magic Resist
+40-50/50-60/60-70 Melee Damage
+Vision Range: 1200/1200
+Bounty: 40 Gold 15 EXP
+
+[?IMG]
+Warping Touch
+=============
+(Passive) Each attack lowers the hero's stats by 2% for 10 seconds. Subsequent attacks stack and refresh the duration.
+
+[?IMG]
+Unstable Form
+=============
+(Passive) An Old One's form is unstable in this reality, causing it to lose 25 health a second. When an Old One dies, it explodes, dealing 100/160/220 damage in a 350AoE (Deals you half damage to you) 

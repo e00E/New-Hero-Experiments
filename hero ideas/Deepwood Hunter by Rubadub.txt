@@ -1,0 +1,49 @@
+Deepwood Hunter
+
+Sent
+AGI
+550 Range
+
+
+Treetop Predator
+=============
+(Passive) When next to a tree you gain a buff after a short delay that gives you flight, but 30% reduced vision. In addition you gain bonus AGI while the buff is active.
+
+Buff AoE: 275
+Buff Delay: 3/2.7/2.4/2.1
+Bonus AGI: 25/30/35/40%
+
+
+Strangle Spike
+=============
+You shoot a wooden spike in a line that damages enemies it hits and leaves an impassible trail of trees behind it as it travels.
+
+Manacost: 120
+Cooldown: 12
+Cast/Travel Range: 900
+Damage: 100/150/200/250
+Tree Duration: 3/4/5/6 seconds
+Projectile Speed: 1200
+
+
+Mark
+======
+You mark an enemy, increasing all damage you deal them. The damage increase grows each second, but the Mark debuff is lost if you lose vision of that enemy for more then 2 seconds.
+
+Manacost: 20
+Cooldown: 10
+Cast Range: 800
+Damage Increase: 3/4/5/6% per second
+
+
+Corded Arrows
+============
+(Buff Placer) Your arrows attach ropes to the enemy. If the enemy gets more then 1200 distance from you, the arrows rip out, damaging the enemy (Does not give vision of the enemy, but provides a visible tether) You can activate the skill to pull Corded enemies closer to you, ripping the arrows out in the process.
+
+Manacost: 100
+Cooldown: 20
+
+Max Arrow Stacks: 5
+Rip Damage: 40/60/80 Per Stack
+Pull Distance: 75/100/125 Per Stack
+Damage Type: Physical 

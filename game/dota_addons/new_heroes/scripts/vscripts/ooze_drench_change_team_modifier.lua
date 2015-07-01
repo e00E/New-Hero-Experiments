@@ -90,6 +90,10 @@ function ooze_drench_change_team_modifier:OnCreated(keys)
 		-- parent:SetOriginalModel(self:GetCaster():GetModelName())
 		-- parent:SetModel(self:GetCaster():GetModelName())
 		-- AttachWearables(parent)
+		
+		
+		-- TODO: try ManageModelChanges, NotifyWearablesOfModelChange
+		
 		parent:MakeVisibleToTeam(self.old_team, keys.duration)
 		self:OnIntervalThink()
 		self:StartIntervalThink(0.03)
